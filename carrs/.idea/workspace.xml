@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/carrs.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/Board.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/Car.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/Line_point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/Point.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx$1.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/out/production/carrs/Vector.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Line_point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/SwingTimerEx.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Vector.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="KarshE69" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Users\User\Desktop\Cars-the-movie-1\carrs\.idea" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Z4xzuZHNaTpOQftjZwr4Fceh7L" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\Desktop\project-boring-main-master\carrs\src" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SwingTimerEx" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="SwingTimerEx" />
+      <module name="carrs" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="Application" factoryName="Application">
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="TestNG">
+      <option name="TEST_OBJECT" value="CLASS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.SwingTimerEx" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="" />
+      <created>1584112435880</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1584112435880</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cars the movie 1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cars the movie 1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser" timestamp="1584120764483">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584120764483" />
+    <state x="1236" y="408" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584115711189">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1236" y="408" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1584115711189" />
+    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584129248833">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584129248833" />
+    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584295255865">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255865" />
+    <state width="914" height="275" key="GridCell.Tab.0.bottom" timestamp="1584295255886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.center" timestamp="1584295255886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.left" timestamp="1584295255886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.right" timestamp="1584295255886">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="346" key="GridCell.Tab.1.bottom" timestamp="1584232012388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="346" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
+    <state width="914" height="346" key="GridCell.Tab.1.center" timestamp="1584232012388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="346" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
+    <state width="914" height="346" key="GridCell.Tab.1.left" timestamp="1584232012388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="346" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
+    <state width="914" height="346" key="GridCell.Tab.1.right" timestamp="1584232012388">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="914" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584294689699">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584294689699" />
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1584289510180">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584289510180" />
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1584289256651">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584289256651" />
+  </component>
+</project>
