@@ -2,26 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/carrs.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Board.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Car.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Line_point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Point.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Vector.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Line_point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SwingTimerEx.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Vector.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +22,7 @@
         <option value="KarshE69" />
       </list>
     </option>
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -174,22 +155,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584295319413" />
-    <state width="914" height="275" key="GridCell.Tab.0.bottom" timestamp="1584295975153">
+    <state width="914" height="275" key="GridCell.Tab.0.bottom" timestamp="1584295255886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584295975153" />
-    <state width="914" height="275" key="GridCell.Tab.0.center" timestamp="1584295975153">
+    <state width="914" height="275" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.center" timestamp="1584295255886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584295975153" />
-    <state width="914" height="275" key="GridCell.Tab.0.left" timestamp="1584295975153">
+    <state width="914" height="275" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.left" timestamp="1584295255886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584295975153" />
-    <state width="914" height="275" key="GridCell.Tab.0.right" timestamp="1584295975153">
+    <state width="914" height="275" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
+    <state width="914" height="275" key="GridCell.Tab.0.right" timestamp="1584295255886">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584295975153" />
+    <state width="914" height="275" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584295255886" />
     <state width="914" height="346" key="GridCell.Tab.1.bottom" timestamp="1584232012388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -206,10 +187,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
-    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584294689699">
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584296023976">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584294689699" />
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584296023976" />
     <state x="1096" y="244" key="run.anything.popup" timestamp="1584289510180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
