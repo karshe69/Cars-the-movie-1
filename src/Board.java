@@ -12,24 +12,24 @@ import javax.swing.Timer;
 public class Board extends JPanel
         implements ActionListener {
 	Toolkit tk = Toolkit.getDefaultToolkit();
-	public static final double FRICTION_FORWARD = 0.01;
-    public static final double FRICTION_SIDE = 0.03;
-    private static final double STOP = 0.01;
+	public static final double FRICTION_FORWARD = 0.04;
+    public static final double FRICTION_SIDE = 0.1;
+    private static final double STOP = 0.02;
     private final int B_WIDTH = (int) tk.getScreenSize().getWidth();
     private final int B_HEIGHT = (int) tk.getScreenSize().getHeight();
     private final int FPS = 60;
     private final int DELAY = 1000/FPS;
-    private final double TURNINGRATE = 0.05;
+    private final double TURNINGRATE = 0.1;
     private final double BREAKFRIC = 0.02;
-    private final double ACCEL = 0.15;
+    private final double ACCEL = 0.3;
     private Car car;
     private Timer timer;
 
-    private boolean presses[] = new boolean[5];
+    private boolean[] presses = new boolean[5];
     
     public Board() {
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
-        car = new Car(B_WIDTH / 2, B_HEIGHT / 2, 25, 75, 0);
+        car = new Car(B_WIDTH / 2.0, B_HEIGHT / 2.0, 25, 75, 0);
 
         timer = new Timer(DELAY, this);
         timer.start();
@@ -49,7 +49,7 @@ public class Board extends JPanel
     	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
     	checkpresses(); // does what ever needs to be done if any keys are pressed.
     	breaking(car); // adds frictions
-    	car.move(g2); // moves the car to its new position
+        car.move(g2); // moves the car to its new position
     	}
 
     @Override
@@ -60,8 +60,8 @@ public class Board extends JPanel
     private void checkpresses() {
     	if(presses[4]) //S: activates breaks
 			breaking(car, BREAKFRIC);
-    	else {
-            if (presses[0]) //W: activates gas, can break and gas at the same time so breaking takes priority
+    	else
+            if (presses[0]){ //W: activates gas, can break and gas at the same time so breaking takes priority
                 car.accel(ACCEL);
             if(presses[1]) //W: activates gas, can break and gas at the same time so breaking takes priority
                 car.accel(-ACCEL);
@@ -92,8 +92,7 @@ public class Board extends JPanel
 
         if(key.equals("Space"))
             presses[4] = true;
-        System.out.println(presses[4]);
-    		
+
     }
     
     public void key_released(String key) { // releases the keys that are being pressed from the pressed table

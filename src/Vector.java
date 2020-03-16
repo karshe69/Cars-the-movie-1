@@ -45,6 +45,10 @@ public class Vector {
 		y -= temp * c;
 	}
 
+	public double getAngle(){
+		return Math.atan2(y, x);
+	}
+
 	public double size(){
 		return Math.sqrt(x*x + y*y);
 	}

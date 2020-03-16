@@ -1,8 +1,8 @@
 import java.awt.Graphics2D;
 
 public class Car extends Point{
-	private Point corners[] = new Point[4];
-	private Point points[] = new Point[56];
+	private Point[] corners = new Point[4];
+	private Point[] points = new Point[56];
 	private Line_point[] spoiler1 = new Line_point[3];
 	private Line_point[] cockpit = new Line_point[4];
 	private Line_point[] spoiler34 = new Line_point[5];
@@ -13,7 +13,6 @@ public class Car extends Point{
 	private double wheelRadius;
 
 	private double wheelAngle = 0;
-	private double limit = Math.PI / 6;
 	private double wheel_angle;
 	private double innerAngle;
 	private double innerRadius;
@@ -24,8 +23,8 @@ public class Car extends Point{
 		super(x, y);
 		speed = new Vector();
 		this.angle = angle;
-		innerRadius = Math.sqrt(height * height / 4 + width * width / 4);
-		double temp1 = height / 16, temp2 = width / 16;
+		innerRadius = Math.sqrt(height * height / 4.0 + width * width / 4.0);
+		double temp1 = height / 16.0, temp2 = width / 16.0;
 		wheelRadius = Math.sqrt(temp1 * temp1 + temp2 * temp2);
 		wheel_angle = Math.atan(temp2 / temp1);
 		innerAngle = Math.atan((double)width / height);
@@ -66,16 +65,17 @@ public class Car extends Point{
 	}
 
 	public void turn(double alpha) {
+		double limit = Math.PI / 6;
 		if (wheelAngle + alpha < limit && wheelAngle + alpha > -limit)
 			wheelAngle+= alpha;
 	}
 
 	public void turning(){
-		double rate = 0.1;
+		double rate = 0.3;
 		double turnn = wheelAngle * rate;
 		angle += turnn;
 		wheelAngle -= turnn;
-		speed.turning(-angle, rate / 3);
+		speed.turning(-angle, rate * 0.5);
 /*
 		double x1, x2, y1, y2, x_final, y_final;
 		x1 = (corners[2].getX() + corners[1].getX()) / 2;
@@ -328,7 +328,7 @@ public class Car extends Point{
 		y2 = (17 * corners[0].getY() + 239 * corners[3].getY()) / 256;
 		Point middle = new Point((x1 * 51 + x2 * 205) / 256, (y1 * 51 + y2 * 205) / 256);
 
-		Point tcorners[] = new Point[4];
+		Point[] tcorners = new Point[4];
 		for (int i = -1; i <= 1; i += 2){
 			tcorners[i + 2] = new Point(middle.getX() + i * (wheelRadius * Math.cos(wheel_angle +(i * ( wheelAngle + angle)))), middle.getY() + wheelRadius * Math.sin(wheel_angle + i * ( wheelAngle + angle)));
 			tcorners[i + 1] = new Point(middle.getX() - i * (wheelRadius * Math.cos(wheel_angle + i * ( wheelAngle + angle))),middle.getY() - wheelRadius * Math.sin(wheel_angle+ i *  ( wheelAngle + angle)));
@@ -366,10 +366,6 @@ public class Car extends Point{
 
 	}
 	
-	public void saccel(double xs) {
-		speed.saccel(xs);
-	}
-	
 	public void vaccel(Vector vs) {
 		speed.vaccel(vs);
 	}
@@ -382,15 +378,7 @@ public class Car extends Point{
 		return angle;
 	}
 
-	public void setAngle(double angle) {
-		this.angle = angle;
-	}
-
 	public Vector getSpeed() {
 		return speed;
-	}
-
-	public void setSpeed(Vector speed) {
-		this.speed = speed;
 	}
 }
