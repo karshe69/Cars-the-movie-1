@@ -1,20 +1,16 @@
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
 import javax.swing.Timer;
+import javax.swing.ImageIcon;
 
 public class Board extends JPanel
         implements ActionListener {
 	Toolkit tk = Toolkit.getDefaultToolkit();
-	public static final double FRICTION_FORWARD = 0.04;
-    public static final double FRICTION_SIDE = 0.1;
-    private static final double STOP = 0.02;
+	public static final double FRICTION_FORWARD = 0.03;
+    public static final double FRICTION_SIDE = 0.05;
+    private static final double STOP = 0.1;
     private final int B_WIDTH = (int) tk.getScreenSize().getWidth();
     private final int B_HEIGHT = (int) tk.getScreenSize().getHeight();
     private final int FPS = 60;
@@ -22,17 +18,21 @@ public class Board extends JPanel
     private final double TURNINGRATE = 0.1;
     private final double BREAKFRIC = 0.02;
     private final double ACCEL = 0.3;
+    private Image track;
     private Car car;
     private Timer timer;
 
     private boolean[] presses = new boolean[5];
     
     public Board() {
+        System.out.println(B_WIDTH);
+        System.out.println(B_HEIGHT);
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
-        car = new Car(B_WIDTH / 2.0, B_HEIGHT / 2.0, 25, 75, 0);
+        car = new Car(B_WIDTH / 2, B_HEIGHT / 1.15, 25, 75, 0);
 
         timer = new Timer(DELAY, this);
         timer.start();
+        track = new ImageIcon("racetrack.png").getImage();
     }
 
     @Override
@@ -44,13 +44,19 @@ public class Board extends JPanel
 
     private void drawStuff(Graphics g) {
     	Graphics2D g2 = (Graphics2D) g;
-    	g2.drawRoundRect(700, 400, 500, 300, 100, 100);
     	g2.setColor(new Color(100, 100, 100));
     	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+    	drawTrack(g);
     	checkpresses(); // does what ever needs to be done if any keys are pressed.
     	breaking(car); // adds frictions
         car.move(g2); // moves the car to its new position
     	}
+
+    private void drawTrack(Graphics g){
+        g.drawImage(track, 0, 0, this);
+        Toolkit.getDefaultToolkit().sync();
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
