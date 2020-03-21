@@ -88,11 +88,14 @@ public class Car extends Point{
 
 	}
 
-	public void  move(Graphics2D g) {
+	public void  move() {
 		turning();
 		x += speed.getX();
 		y += speed.getY();
 		updatePoints();
+	}
+
+	public void draw(Graphics2D g){
 /*
 		for (int i = 0; i < 4; i++)
 			g.drawLine((int)corners[i].getX(), (int)corners[i].getY(), (int)corners[i].getX() + 2, (int)corners[i].getY() + 2);
@@ -115,6 +118,10 @@ public class Car extends Point{
 		for (int i = 0; i < 4; i++)
 			for (int j = 0; j < 4; j++)
 				wheels[i][j].draw(g);
+	}
+
+	public void shine(){
+		System.out.println("tomo");
 	}
 
 	public void updatePoints(){
@@ -371,7 +378,7 @@ public class Car extends Point{
 	}
 
 	public void accel(double size){
-		vaccel(new Vector(size, angle + wheelAngle));
+		vaccel(new Vector(size, angle));
 	}
 
 	public double getAngle() {
@@ -380,5 +387,10 @@ public class Car extends Point{
 
 	public Vector getSpeed() {
 		return speed;
+	}
+
+	public synchronized Point[] getCorners() {
+		final Point[] pnts = corners;
+		return pnts;
 	}
 }

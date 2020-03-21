@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="">
+    <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="track deployed">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hitmap.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/carrs/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/carrs/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Point.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +157,21 @@
       <option name="project" value="LOCAL" />
       <updated>1584341782454</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="track deployed">
+      <created>1584462321464</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1584462321464</updated>
+    </task>
+    <task id="LOCAL-00008" summary="track deployed">
+      <created>1584462374328</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1584462374328</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -172,41 +191,42 @@
     <MESSAGE value="Cars the movie 1" />
     <MESSAGE value="Commit Message!" />
     <MESSAGE value="Fixed some warnings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some warnings" />
+    <MESSAGE value="track deployed" />
+    <option name="LAST_COMMIT_MESSAGE" value="track deployed" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser" timestamp="1584120764483">
+    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser" timestamp="1584816954395">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584120764483" />
+    <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1584816954395" />
     <state x="1236" y="408" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1584115711189">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1236" y="408" width="408" height="240" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1040@0.0.1920.1040" timestamp="1584115711189" />
-    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584129248833">
+    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1584815937350">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584129248833" />
-    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584462319681">
+    <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584815937350" />
+    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584818395487">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584462319681" />
-    <state width="914" height="277" key="GridCell.Tab.0.bottom" timestamp="1584462193138">
+    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584818395487" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1584818333936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584462193138" />
-    <state width="914" height="277" key="GridCell.Tab.0.center" timestamp="1584462193138">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584818333936" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1584818333935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584462193138" />
-    <state width="914" height="277" key="GridCell.Tab.0.left" timestamp="1584462193138">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584818333935" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1584818333935">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584462193138" />
-    <state width="914" height="277" key="GridCell.Tab.0.right" timestamp="1584462193138">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584818333935" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1584818333936">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="914" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584462193138" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584818333936" />
     <state width="914" height="346" key="GridCell.Tab.1.bottom" timestamp="1584232012388">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -223,10 +243,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="914" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584232012388" />
-    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584296770514">
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584814875128">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584296770514" />
+    <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584814875128" />
     <state x="1096" y="244" key="run.anything.popup" timestamp="1584289510180">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

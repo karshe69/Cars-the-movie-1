@@ -1,9 +1,15 @@
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import java.util.HashSet;
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import javax.swing.Timer;
 import javax.swing.ImageIcon;
+
 
 public class Board extends JPanel
         implements ActionListener {
@@ -19,8 +25,10 @@ public class Board extends JPanel
     private final double BREAKFRIC = 0.02;
     private final double ACCEL = 0.3;
     private Image track;
+    private static HashSet<Point> hitMap;
     private Car car;
     private Timer timer;
+
 
     private boolean[] presses = new boolean[5];
     
@@ -28,17 +36,35 @@ public class Board extends JPanel
         System.out.println(B_WIDTH);
         System.out.println(B_HEIGHT);
         setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
-        car = new Car(B_WIDTH / 2, B_HEIGHT / 1.15, 25, 75, 0);
 
+        BufferedImage hitMapImage = null;
+        try {
+            File file = new File("hitmap.png");
+            if (file.exists())
+                hitMapImage = ImageIO.read(file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        hitMap = new HashSet<>();
+        if (hitMapImage != null) {
+            for (int x = 0; x < hitMapImage.getWidth(); x++) {
+                for (int y = 0; y < hitMapImage.getHeight(); y++) {
+                    if (hitMapImage.getRGB(x, y) == -16777216) {
+                        hitMap.add(new Point(x, y));
+                    }
+                }
+            }
+        }
+
+        car = new Car(B_WIDTH / 2, B_HEIGHT / 1.15, 25, 75, 0);
+        track = new ImageIcon("racetrack.png").getImage();
         timer = new Timer(DELAY, this);
         timer.start();
-        track = new ImageIcon("racetrack.png").getImage();
     }
 
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
-
         drawStuff(g);
     }
 
@@ -50,8 +76,23 @@ public class Board extends JPanel
     	drawTrack(g);
     	checkpresses(); // does what ever needs to be done if any keys are pressed.
     	breaking(car); // adds frictions
-        car.move(g2); // moves the car to its new position
+        car.move(); // moves the car to its new position
+        collisionCheck();
+        car.draw(g2);
     	}
+
+    private void collisionCheck(){
+        int x, y;
+        for (Point pnt:car.getCorners()
+             ) {
+            x = (int)Math.abs(pnt.getX());
+            y = (int)Math.abs(pnt.getY());
+            if (hitMap.contains(new Point(x, y))){
+                car.shine();
+                break;
+            }
+        }
+    }
 
     private void drawTrack(Graphics g){
         g.drawImage(track, 0, 0, this);
