@@ -17,6 +17,11 @@ public class Vector {
 		x += xs * Math.cos(angle);
 
 	}
+
+	public void copy(Vector vec){
+		x = vec.getX();
+		y = vec.getY();
+	}
 	
 	public void vaccel(Vector vs) {
 		x += vs.x;

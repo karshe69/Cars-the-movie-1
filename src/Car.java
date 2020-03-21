@@ -10,19 +10,27 @@ public class Car extends Point{
 	private Line_point[] body = new Line_point[6];
 	private Line_point[] spoiler2 = new Line_point[7];
 	private Line_point[][] wheels = new Line_point[4][4];
-	private double wheelRadius;
 
-	private double wheelAngle = 0;
+	private double wheelRadius;
 	private double wheel_angle;
 	private double innerAngle;
 	private double innerRadius;
 	private double angle;
 	private Vector speed;
+	private double wheelAngle = 0;
+	private Point startPoint;
+	private double startAngle;
+	private Vector startSpeed;
 	
 	public Car(double x, double y, int width, int height, double angle) {
 		super(x, y);
 		speed = new Vector();
 		this.angle = angle;
+
+		startPoint = new Point(x, y);
+		startAngle = angle;
+		startSpeed = new Vector();
+
 		innerRadius = Math.sqrt(height * height / 4.0 + width * width / 4.0);
 		double temp1 = height / 16.0, temp2 = width / 16.0;
 		wheelRadius = Math.sqrt(temp1 * temp1 + temp2 * temp2);
@@ -121,7 +129,12 @@ public class Car extends Point{
 	}
 
 	public void shine(){
-		System.out.println("tomo");
+		x = startPoint.getX();
+		y = startPoint.getY();
+		angle = startAngle;
+		speed.copy(startSpeed);
+		wheelAngle = 0;
+
 	}
 
 	public void updatePoints(){
