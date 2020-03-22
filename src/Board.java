@@ -15,7 +15,7 @@ public class Board extends JPanel implements ActionListener {
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	public static final double FRICTION_FORWARD = 0.03;
     public static final double FRICTION_SIDE = 0.05;
-    private static final double STOP = 1;
+    private static final double STOP = 0.1;
     private final int B_WIDTH = (int) tk.getScreenSize().getWidth();
     private final int B_HEIGHT = (int) tk.getScreenSize().getHeight();
     private final int FPS = 60;
@@ -27,6 +27,11 @@ public class Board extends JPanel implements ActionListener {
     private static HashSet<Point> hitMap;
     private Car car;
     private Timer timer;
+
+    private Color timerColor = new Color(51, 236, 226);
+    private Color carColor = new Color(195, 0, 195);
+
+    private int time = 0;
 
     private boolean[] presses = new boolean[5];
     
@@ -63,16 +68,25 @@ public class Board extends JPanel implements ActionListener {
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
+        time++;
         drawStuff(g);
     }
 
     private void drawStuff(Graphics g) {
     	Graphics2D g2 = (Graphics2D) g;
         g2.setStroke(new BasicStroke(2));
-    	g2.setColor(new Color(195, 0, 195));
     	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
     	drawTrack(g2);
+
+    	String str = "";
+    	str += (time / FPS / 60) + ":" + (time / FPS % 60) + "." + (time % FPS * 100 / 60);
+
+        g2.setColor(timerColor);
+        g2.setFont(new Font("Courier", Font.BOLD,75));
+        g2.drawString(str, 50, 100);
+
+        g2.setColor(carColor);
     	checkpresses(); // does what ever needs to be done if any keys are pressed.
     	breaking(car); // adds frictions
         car.move(); // moves the car to its new position
