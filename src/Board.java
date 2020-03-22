@@ -11,36 +11,38 @@ import javax.swing.Timer;
 import javax.swing.ImageIcon;
 
 
-public class Board extends JPanel implements ActionListener {
+public class Board extends JPanel implements ActionListener { // the board of the game, which is the main part of it
 	Toolkit tk = Toolkit.getDefaultToolkit();
-	public static final double FRICTION_FORWARD = 0.03;
-    public static final double FRICTION_SIDE = 0.05;
-    private static final double STOP = 0.1;
-    private final int B_WIDTH = (int) tk.getScreenSize().getWidth();
-    private final int B_HEIGHT = (int) tk.getScreenSize().getHeight();
-    private final int FPS = 60;
-    private final int DELAY = 1000/FPS;
-    private final double TURNINGRATE = 0.1;
-    private final double BREAKFRIC = 0.02;
-    private final double ACCEL = 0.3;
-    private Image track;
-    private static HashSet<Point> hitMap;
-    private Car car;
-    private Timer timer;
 
-    private Color timerColor = new Color(51, 236, 226);
-    private Color carColor = new Color(195, 0, 195);
+    private final int B_WIDTH = (int) tk.getScreenSize().getWidth(); // width of the screen
+    private final int B_HEIGHT = (int) tk.getScreenSize().getHeight(); // height of the screen
 
-    private int time = 0;
+    private final int FPS = 60; // frames per second
+    private final int DELAY = 1000/FPS; // time between frames
 
-    private boolean[] presses = new boolean[5];
+    private Image track; // the image of the track for displaying on screen
+    private static HashSet<Point> hitMap; //hash map of where you can and cannot be on screen
+    private Car car; // the car
+    private Timer timer; // timer for looping main
+
+	public static final double FRICTION_FORWARD = 0.03; // size of the friction applied towards the car's direction
+    public static final double FRICTION_SIDE = 0.05; // size of the friction applied perpendicular to the car's direction
+    private final double BREAKFRIC = 0.02; // size of the friction applied when breaking
+    private static final double STOP = 0.1; // size speed which i round to 0
+    private final double TURNINGRATE = 0.1; // turning rate
+    private final double ACCEL = 0.3; // acceleration rate
+
+    private Color timerColor = new Color(51, 236, 226); // color of the timer
+    private Color carColor = new Color(195, 0, 195); // color of the car
+    private int time = 0; // timer for displaying on screen. counts in ticks
+
+    private boolean[] presses = new boolean[5]; // key pressing map
     
     public Board() {
-        System.out.println(B_WIDTH);
-        System.out.println(B_HEIGHT);
-        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT));
+        // initializer of board
+        setPreferredSize(new Dimension(B_WIDTH, B_HEIGHT)); // sets screen size
 
-        BufferedImage hitMapImage = null;
+        BufferedImage hitMapImage = null; // loads hitmap.png to translate to a hashmap
         try {
             File file = new File("hitmap.png");
             if (file.exists())
@@ -48,66 +50,70 @@ public class Board extends JPanel implements ActionListener {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        hitMap = new HashSet<>();
+
+        hitMap = new HashSet<>(); // translates the hitmap.png to a hashmap
         if (hitMapImage != null) {
             for (int x = 0; x < hitMapImage.getWidth(); x++) {
                 for (int y = 0; y < hitMapImage.getHeight(); y++) {
-                    if (hitMapImage.getRGB(x, y) == -16777216) {
+                    if (hitMapImage.getRGB(x, y) == -16777216) { // if hitmap.png is black in this spot, add it to the hashmap
                         hitMap.add(new Point(x, y));
                     }
                 }
             }
         }
 
-        car = new Car(B_WIDTH / 2, B_HEIGHT / 1.15, 25, 75, 0);
-        track = new ImageIcon("racetrack.png").getImage();
-        timer = new Timer(DELAY, this);
-        timer.start();
+        car = new Car(B_WIDTH / 2, B_HEIGHT / 1.15, 25, 75, 0); // creates the car
+        track = new ImageIcon("racetrack.png").getImage(); // creates the track
+        timer = new Timer(DELAY, this); // creates the loop cycle
+        timer.start(); // starts the loop cycle
     }
 
     @Override
-    public void paintComponent(Graphics g) {
+    public void paintComponent(Graphics g) { // the part that loops
         super.paintComponent(g);
-        time++;
-        drawStuff(g);
+        time++; // increases the timer by one tick
+        drawStuff(g); // enters the main loop
     }
 
-    private void drawStuff(Graphics g) {
-    	Graphics2D g2 = (Graphics2D) g;
-        g2.setStroke(new BasicStroke(2));
-    	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+    private void drawStuff(Graphics g) { // the main loop of this program
+    	Graphics2D g2 = (Graphics2D) g; // creates a new graphics for customization
+        g2.setStroke(new BasicStroke(2)); // sets stroke size to 2
+    	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON); // makes the edges look nicer
 
-    	drawTrack(g2);
+    	drawTrack(g2); // draws the race track
 
-    	String str = "";
-    	str += (time / FPS / 60) + ":" + (time / FPS % 60) + "." + (time % FPS * 100 / 60);
+    	String str = ""; //translates the ticks to an actual timer in format of min:sec.milisec
+    	str += (time / FPS / 60) + ":" + (time / FPS % 60) + "." + (time % FPS * 50 / 3);
 
-        g2.setColor(timerColor);
-        g2.setFont(new Font("Courier", Font.BOLD,75));
-        g2.drawString(str, 50, 100);
+        g2.setColor(timerColor); // sets color for the timer
+        g2.setFont(new Font("Courier", Font.BOLD,75)); // sets font and size of the timer
+        g2.drawString(str, 50, 100); // draws the timer
 
-        g2.setColor(carColor);
-    	checkpresses(); // does what ever needs to be done if any keys are pressed.
-    	breaking(car); // adds frictions
-        car.move(); // moves the car to its new position
-        collisionCheck();
-        car.draw(g2);
+    	checkpresses(); // if any keys were pressed, this does the events those keys activate
+    	friction(car); // adds frictions
+
+        car.move(); // calculates the car's new position
+
+        collisionCheck(); // checks for collisions
+
+        g2.setColor(carColor); // sets color for the car
+        car.draw(g2); // draws the car
     	}
 
-    private void collisionCheck(){
+    private void collisionCheck(){ // checks for collisions made between the car and the road
         int x, y;
-        for (Point pnt:car.getEdges()
+        for (Point pnt:car.getEdges() // runs through the edges of the car
              ) {
             x = (int)Math.abs(pnt.getX());
             y = (int)Math.abs(pnt.getY());
-            if (hitMap.contains(new Point(x, y))){
-                car.shine();
+            if (hitMap.contains(new Point(x, y))){ // if the edge of the car is in the hashmap kill it
+                car.shine(); // kills the car
                 break;
             }
         }
     }
 
-    private void drawTrack(Graphics g){
+    private void drawTrack(Graphics g){ //draws the track
         g.drawImage(track, 0, 0, this);
         Toolkit.getDefaultToolkit().sync();
     }
@@ -117,24 +123,25 @@ public class Board extends JPanel implements ActionListener {
         repaint();
     }
 
-    private void checkpresses() {
-    	if(presses[4]) //S: activates breaks
+    private void checkpresses() { // activates the events according to the key presses
+    	if(presses[4]) //Space: activates breaks
 			breaking(car, BREAKFRIC);
-    	else{
-            if (presses[0]) //W: activates gas, can break and gas at the same time so breaking takes priority
-                car.accel(ACCEL);
-            if(presses[1]) //W: activates gas, can break and gas at the same time so breaking takes priority
-                car.accel(-ACCEL / 2);
-            }
+    	else
+    	    if(!presses[0] || !presses[1]) // you cant both fas forward and backwards
+    	    {
+                if (presses[0]) //W: activates gas, can break and gas at the same time so breaking takes priority
+                    car.accel(ACCEL);
+                if(presses[1]) //S: activates gas backwards, can break and gas at the same time so breaking takes priority
+                    car.accel(-ACCEL / 2);
+    	    }
 		if(presses[2]) {
     		//D: turns the car right
-	    	car.turn(TURNINGRATE);
+	    	car.wheelTurn(TURNINGRATE);
 		}
 		if(presses[3]) {
     		//A: turns the car left
-	    	car.turn(-TURNINGRATE);
+	    	car.wheelTurn(-TURNINGRATE);
 		}
-		//System.out.println(car.getSpeed());
     }
 
     public void key_pressed(String key) { // stores the keys that are currently being pressed in the pressed table by their index
@@ -167,12 +174,15 @@ public class Board extends JPanel implements ActionListener {
             presses[4] = false;
     }
 
-    public static void breaking(Car object) { // for friction
-        object.getSpeed().projection_accelaration(object.getAngle() - Math.PI, -FRICTION_FORWARD, -FRICTION_SIDE);
+
+    public static void friction(Car object) { // applies friction
+        object.getSpeed().projectionAcceleration(object.getAngle() - Math.PI, -FRICTION_FORWARD, -FRICTION_SIDE);
     }
     
-    public static void breaking(Car object, double by) { // breaks the object, can also be used for friction
-        object.getSpeed().paccel(by);
+    public static void breaking(Car object, double by) { // applies breaking/friction
+        object.getSpeed().paccel(by); // breaks the object by the amount specified
+
+        // if the speed is under STOP, round it to 0
         if (object.getSpeed().getX() < STOP && (object.getSpeed().getX() > -STOP))
             object.getSpeed().setX(0);
         if (object.getSpeed().getY() < STOP && (object.getSpeed().getY() > -STOP))

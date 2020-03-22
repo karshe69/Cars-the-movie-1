@@ -1,61 +1,46 @@
-
-public class Vector {
+public class Vector { // a vector
 	private double x;
 	private double y;
-	public Vector() {
+	public Vector() { // initializes the vector with default parameters
 		x = 0;
 		y = 0;
 	}
-	public Vector(double size, double angle) {
+	public Vector(double size, double angle) { // initializes the vector with given parameters
 		x = size * Math.cos(angle);
 		y = size * Math.sin(angle);
 	}
-	
-	public void saccel(double xs) {
-		double angle = Math.atan2(y, x);
-		y += xs * Math.sin(angle);
-		x += xs * Math.cos(angle);
 
-	}
-
-	public void copy(Vector vec){
+	public void copy(Vector vec){ // copies a given vector's parameters
 		x = vec.getX();
 		y = vec.getY();
 	}
 	
-	public void vaccel(Vector vs) {
+	public void vaccel(Vector vs) { // vector acceleration
 		x += vs.x;
 		y += vs.y;
 	}
 
-	public void paccel(double precent) {
-		x /= 1 +  precent;
-		y /= 1 +  precent;
+	public void paccel(double percent) { // percentage acceleration
+		x /= 1 +  percent;
+		y /= 1 +  percent;
 	}
 
-	public void projection_accelaration(double angle, double precent1, double precent2){
+	public void projectionAcceleration(double angle, double percent1, double percent2){ // accelerates the vector along a given axis by percentage1
+		// and by percentage2 along the perpendicular axis
 		double a = Math.cos(angle);
 		a *= a;
-		x *= a * (1 + precent1) + (1 - a) * (1 + precent2);
-		y *= (1 - a) * (1 + precent1) + a * (1 + precent2);
+		x *= a * (1 + percent1) + (1 - a) * (1 + percent2);
+		y *= (1 - a) * (1 + percent1) + a * (1 + percent2);
 	}
 
-	public void turning(double angle, double precent){
+	public void turning(double angle, double percent){ // turns the vector to angle by percent
 		double s = Math.sin(angle), c = Math.cos(angle);
 		double temp = x * s + y * c;
-		temp *= precent;
+		temp *= percent;
 		x += temp * c;
 		x -= temp * s;
 		y += temp * s;
 		y -= temp * c;
-	}
-
-	public double getAngle(){
-		return Math.atan2(y, x);
-	}
-
-	public double size(){
-		return Math.sqrt(x*x + y*y);
 	}
 
 	public double getX() {

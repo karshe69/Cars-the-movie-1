@@ -1,76 +1,88 @@
 import java.awt.Graphics2D;
 
-public class Car extends Point{
-	private Point[] edges = new Point[8];
-	private Point[] corners = new Point[4];
-	private Point[] points = new Point[56];
-	private Line_point[] spoiler1 = new Line_point[3];
-	private Line_point[] cockpit = new Line_point[4];
-	private Line_point[] spoiler34 = new Line_point[5];
-	private Line_point[] wheel_axis = new Line_point[6];
-	private Line_point[] body = new Line_point[6];
-	private Line_point[] spoiler2 = new Line_point[7];
-	private Line_point[][] wheels = new Line_point[4][4];
+public class Car extends Point{ // the car~TM
 
+	private Point[] edges = new Point[8]; // spots specified as edges which can be hit be the track
+	private Point[] points = new Point[56]; // the individual vertices that make up the car
+
+	// arrays of lines which are combined from 2 points to make up the car
+	private Line[] spoiler1 = new Line[3];
+	private Line[] cockpit = new Line[4];
+	private Line[] spoiler34 = new Line[5];
+	private Line[] wheel_axis = new Line[6];
+	private Line[] body = new Line[6];
+	private Line[] spoiler2 = new Line[7];
+	private Line[][] wheels = new Line[4][4];
+
+	// 2 constants that make up the size and shape of the wheels
 	private double wheelRadius;
 	private double wheel_angle;
+
+	// 2 constants that make up the size and shape of the car
 	private double innerAngle;
 	private double innerRadius;
-	private double angle;
-	private Vector speed;
-	private double wheelAngle = 0;
+
+	private double angle; // current angle of the car
+	private Vector speed; // current speed of the car
+	private double wheelAngle = 0; //angle of the wheels of the car compared to the car
+
+	//to returns the car to its starting position when it crashes
 	private Point startPoint;
 	private double startAngle;
 	private Vector startSpeed;
 	
-	public Car(double x, double y, int width, int height, double angle) {
-		super(x, y);
-		speed = new Vector();
-		this.angle = angle;
+	public Car(double x, double y, int width, int height, double angle) { // initializes the car
+		super(x, y); // position of the center of the car on the screen
+		speed = new Vector(); // speed of the car
+		this.angle = angle; // angle of the car compared to the width of the screen
 
+		// sets up the starting parameters
 		startPoint = new Point(x, y);
 		startAngle = angle;
 		startSpeed = new Vector();
 
+		// creates the constants that make up the shape and size of both the car and the wheels
 		innerRadius = Math.sqrt(height * height / 4.0 + width * width / 4.0);
 		double temp1 = height / 16.0, temp2 = width / 16.0;
 		wheelRadius = Math.sqrt(temp1 * temp1 + temp2 * temp2);
 		wheel_angle = Math.atan(temp2 / temp1);
 		innerAngle = Math.atan((double)width / height);
 
-		for (int i = 0; i < 4; i++)
-			corners[i] = new Point();
+		// initializes the points
 		for (int i = 0; i < 56; i++)
 			points[i] = new Point();
+
+		// initializes the lines that make up the car
 		for (int i = 0; i < 3; i++) {
-			spoiler1[i] = new Line_point(points[i], points[i + 1]);
-			cockpit[i] = new Line_point(points[i + 4], points[i + 5]);
+			spoiler1[i] = new Line(points[i], points[i + 1]);
+			cockpit[i] = new Line(points[i + 4], points[i + 5]);
 		}
-		cockpit[3] = new Line_point(points[7], points[4]);
+		cockpit[3] = new Line(points[7], points[4]);
 		for (int i = 0; i < 2; i++){
-			spoiler34[i] = new Line_point(points[i + 8], points[i + 9]);
-			spoiler34[i + 2] = new Line_point(points[i + 11], points[i + 12]);
-			wheel_axis[i] = new Line_point(points[i + 16], points[i + 17]);
-			wheel_axis[i + 3] = new Line_point(points[i + 21], points[i + 22]);
+			spoiler34[i] = new Line(points[i + 8], points[i + 9]);
+			spoiler34[i + 2] = new Line(points[i + 11], points[i + 12]);
+			wheel_axis[i] = new Line(points[i + 16], points[i + 17]);
+			wheel_axis[i + 3] = new Line(points[i + 21], points[i + 22]);
 		}
-		spoiler34[4] = new Line_point(points[14], points[15]);
-		wheel_axis[2] = new Line_point(points[19], points[20]);
-		wheel_axis[5] = new Line_point(points[24], points[25]);
-		body[0] = new Line_point(points[26], points[8]);
-		body[1] = new Line_point(points[8], points[27]);
-		body[2] = new Line_point(points[27], points[28]);
-		body[3] = new Line_point(points[29], points[11]);
-		body[4] = new Line_point(points[11], points[30]);
-		body[5] = new Line_point(points[30], points[31]);
+		spoiler34[4] = new Line(points[14], points[15]);
+		wheel_axis[2] = new Line(points[19], points[20]);
+		wheel_axis[5] = new Line(points[24], points[25]);
+		body[0] = new Line(points[26], points[8]);
+		body[1] = new Line(points[8], points[27]);
+		body[2] = new Line(points[27], points[28]);
+		body[3] = new Line(points[29], points[11]);
+		body[4] = new Line(points[11], points[30]);
+		body[5] = new Line(points[30], points[31]);
 		for (int i = 0; i < 7; i++){
-			spoiler2[i] = new Line_point(points[32 + i], points[33 + i]);
+			spoiler2[i] = new Line(points[32 + i], points[33 + i]);
 		}
 		for (int i = 0; i < 4; i++) {
 			for (int j = 0; j < 3; j++)
-				wheels[i][j] = new Line_point(points[40 + 4 * i + j], points[41 + 4 * i + j]);
-			wheels[i][3] = new Line_point(points[40 + 4 * i], points[43 + 4 * i]);
+				wheels[i][j] = new Line(points[40 + 4 * i + j], points[41 + 4 * i + j]);
+			wheels[i][3] = new Line(points[40 + 4 * i], points[43 + 4 * i]);
 		}
 
+		// makes it so the edges of the car sync with the appointed points that make up those edges
 		edges[0] = points[1];
 		edges[1] = points[2];
 		edges[2] = points[35];
@@ -80,37 +92,33 @@ public class Car extends Point{
 		edges[6] = points[28];
 		edges[7] = points[31];
 
-		updatePoints();
+		updatePoints(); // updates the point's position relative to the car's position and orientation.
 	}
 
-	public void turn(double alpha) {
+	public void wheelTurn(double alpha) { // turns the wheels of the car
 		double limit = Math.PI / 6;
-		if (wheelAngle + alpha < limit)
+		if (wheelAngle + alpha < limit) // limits how much the wheels can turn compared to the car
 			if (wheelAngle + alpha > -limit)
 				wheelAngle += alpha;
 			else wheelAngle = -limit;
 		else wheelAngle = limit;
 	}
 
-	public void turning(){
+	public void turn(){ // turns the car and updates everything accordingly
 		double turnn = wheelAngle * 0.5;
-		angle += turnn;
-		wheelAngle -= turnn;
-		speed.turning(-angle, 0.05);
+		angle += turnn; // updates the car's angle
+		wheelAngle -= turnn; // updates the wheels's angle
+		speed.turning(-angle, 0.05); // updates the car's speed
 	}
 
-	public void  move() {
-		turning();
-		x += speed.getX();
-		y += speed.getY();
-		updatePoints();
+	public void  move() { // moves the car
+		turn(); // turns the car
+		x += speed.getX(); // moves it according to it's speed in the x axis
+		y += speed.getY(); // moves it according to it's speed in the y axis
+		updatePoints(); // updates the points to the new position
 	}
 
-	public void draw(Graphics2D g){
-/*
-		for (int i = 0; i < 4; i++)
-			g.drawLine((int)corners[i].getX(), (int)corners[i].getY(), (int)corners[i].getX() + 2, (int)corners[i].getY() + 2);
-*/
+	public void draw(Graphics2D g){ // draws all of the lines that make up the car
 		for (int i = 0; i < 3; i++)
 			spoiler1[i].draw(g);
 
@@ -131,7 +139,7 @@ public class Car extends Point{
 				wheels[i][j].draw(g);
 	}
 
-	public void shine(){
+	public void shine(){ // updates the car to its starting position
 		x = startPoint.getX();
 		y = startPoint.getY();
 		angle = startAngle;
@@ -139,11 +147,12 @@ public class Car extends Point{
 		wheelAngle = 0;
 	}
 
-	public void updatePoints(){
+	public void updatePoints(){ // updates the points of the car relative to the corners of the car
 		double x1, y1, x2, y2;
+		Point[] corners = new Point[4];
 		for (int i = -1; i <= 1; i += 2){
-			corners[i + 2].update(x + i * (innerRadius * Math.cos(innerAngle + i * angle)), y + innerRadius * Math.sin(innerAngle + i * angle));
-			corners[i + 1].update(x - i * (innerRadius * Math.cos(innerAngle + i * angle)),y - innerRadius * Math.sin(innerAngle + i * angle));
+			corners[i + 2] = new Point(x + i * (innerRadius * Math.cos(innerAngle + i * angle)), y + innerRadius * Math.sin(innerAngle + i * angle));
+			corners[i + 1] = new Point(x - i * (innerRadius * Math.cos(innerAngle + i * angle)),y - innerRadius * Math.sin(innerAngle + i * angle));
 		}
 
 		//spoiler1
@@ -387,11 +396,11 @@ public class Car extends Point{
 
 	}
 	
-	public void vaccel(Vector vs) {
+	public void vaccel(Vector vs) { // vector acceleration
 		speed.vaccel(vs);
 	}
 
-	public void accel(double size){
+	public void accel(double size){ // speeds up by size
 		vaccel(new Vector(size, angle));
 	}
 

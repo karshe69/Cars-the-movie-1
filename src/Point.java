@@ -1,20 +1,20 @@
 import java.util.Objects;
 
-public class Point {
-    protected double x;
-    protected double y;
+public class Point { // a point
+    protected double x; // position along the x axis
+    protected double y; // position along the y axis
 
-    public Point(){
+    public Point(){ // initializes the point with default parameters
         x = 0;
         y = 0;
     }
 
-    public Point(double x, double y){
+    public Point(double x, double y){ // initializes the point with given parameters
         this.x = x;
         this.y = y;
     }
 
-    public void update(double x, double y){
+    public void update(double x, double y){ // updates both x and y of the point
         this.x = x;
         this.y = y;
     }
@@ -23,16 +23,8 @@ public class Point {
         return x;
     }
 
-    public void setX(double x) {
-        this.x = x;
-    }
-
     public double getY() {
         return y;
-    }
-
-    public void setY(double y) {
-        this.y = y;
     }
 
     @Override

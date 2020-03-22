@@ -3,7 +3,18 @@
   <component name="ChangeListManager">
     <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/Car.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Car.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/Line_point.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/Point.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Point.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/SwingTimerEx.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Car.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Car.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Line_point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Line.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SwingTimerEx.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SwingTimerEx.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Vector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +38,7 @@
       </list>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -44,6 +56,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -258,26 +271,26 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584815937350" />
-    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584906190760">
+    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584906675518">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584906190760" />
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1584906131860">
+    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584906675518" />
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1584911597252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584906131860" />
-    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1584906131860">
+    <state width="1877" height="277" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1584911597252" />
+    <state width="1877" height="277" key="GridCell.Tab.0.center" timestamp="1584911597252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584906131860" />
-    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1584906131860">
+    <state width="1877" height="277" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1584911597252" />
+    <state width="1877" height="277" key="GridCell.Tab.0.left" timestamp="1584911597252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584906131860" />
-    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1584906131860">
+    <state width="1877" height="277" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1584911597252" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right" timestamp="1584911597252">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584906131860" />
+    <state width="1877" height="277" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584911597252" />
     <state width="1877" height="346" key="GridCell.Tab.1.bottom" timestamp="1584893617353">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -302,10 +315,18 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1136" y="343" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584902056719" />
-    <state x="1096" y="244" key="run.anything.popup" timestamp="1584289510180">
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1584908100926">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584289510180" />
+    <state x="769" y="436" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584908100926" />
+    <state x="664" y="311" key="git4idea.merge.GitPullDialog" timestamp="1584908247710">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="664" y="311" key="git4idea.merge.GitPullDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584908247710" />
+    <state x="1096" y="244" key="run.anything.popup" timestamp="1584908616536">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1096" y="244" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1584908616536" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1584289256651">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
