@@ -11,12 +11,11 @@ import javax.swing.Timer;
 import javax.swing.ImageIcon;
 
 
-public class Board extends JPanel
-        implements ActionListener {
+public class Board extends JPanel implements ActionListener {
 	Toolkit tk = Toolkit.getDefaultToolkit();
 	public static final double FRICTION_FORWARD = 0.03;
     public static final double FRICTION_SIDE = 0.05;
-    private static final double STOP = 0.1;
+    private static final double STOP = 1;
     private final int B_WIDTH = (int) tk.getScreenSize().getWidth();
     private final int B_HEIGHT = (int) tk.getScreenSize().getHeight();
     private final int FPS = 60;
@@ -28,7 +27,6 @@ public class Board extends JPanel
     private static HashSet<Point> hitMap;
     private Car car;
     private Timer timer;
-
 
     private boolean[] presses = new boolean[5];
     
@@ -70,7 +68,8 @@ public class Board extends JPanel
 
     private void drawStuff(Graphics g) {
     	Graphics2D g2 = (Graphics2D) g;
-    	g2.setColor(new Color(255, 255, 255));
+        g2.setStroke(new BasicStroke(2));
+    	g2.setColor(new Color(195, 0, 195));
     	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
     	drawTrack(g2);
@@ -103,7 +102,7 @@ public class Board extends JPanel
     public void actionPerformed(ActionEvent e) {
         repaint();
     }
-    
+
     private void checkpresses() {
     	if(presses[4]) //S: activates breaks
 			breaking(car, BREAKFRIC);
@@ -123,7 +122,7 @@ public class Board extends JPanel
 		}
 		//System.out.println(car.getSpeed());
     }
-    
+
     public void key_pressed(String key) { // stores the keys that are currently being pressed in the pressed table by their index
     	if(key.equals("W"))
     		presses[0] = true;
@@ -139,9 +138,8 @@ public class Board extends JPanel
 
         if(key.equals("Space"))
             presses[4] = true;
-
     }
-    
+
     public void key_released(String key) { // releases the keys that are being pressed from the pressed table
     	if(key.equals("W"))
     		presses[0] = false;
@@ -154,11 +152,9 @@ public class Board extends JPanel
         if(key.equals("Space"))
             presses[4] = false;
     }
-    
+
     public static void breaking(Car object) { // for friction
-    	//breaking(object, FRICTION_FORWARD);
         object.getSpeed().projection_accelaration(object.getAngle() - Math.PI, -FRICTION_FORWARD, -FRICTION_SIDE);
-        //System.out.println(object.getSpeed().size());
     }
     
     public static void breaking(Car object, double by) { // breaks the object, can also be used for friction

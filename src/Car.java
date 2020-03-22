@@ -1,7 +1,7 @@
 import java.awt.Graphics2D;
 
 public class Car extends Point{
-	private Point[] edges = new Point[6];
+	private Point[] edges = new Point[8];
 	private Point[] corners = new Point[4];
 	private Point[] points = new Point[56];
 	private Line_point[] spoiler1 = new Line_point[3];
@@ -77,34 +77,26 @@ public class Car extends Point{
 		edges[3] = points[36];
 		edges[4] = points[50];
 		edges[5] = points[54];
+		edges[6] = points[28];
+		edges[7] = points[31];
 
 		updatePoints();
 	}
 
 	public void turn(double alpha) {
 		double limit = Math.PI / 6;
-		if (wheelAngle + alpha < limit && wheelAngle + alpha > -limit)
-			wheelAngle+= alpha;
+		if (wheelAngle + alpha < limit)
+			if (wheelAngle + alpha > -limit)
+				wheelAngle += alpha;
+			else wheelAngle = -limit;
+		else wheelAngle = limit;
 	}
 
 	public void turning(){
-
-
-		double rate = 0.3;
-		double turnn = wheelAngle * rate;
+		double turnn = wheelAngle * 0.5;
 		angle += turnn;
 		wheelAngle -= turnn;
-		speed.turning(-angle, rate * 0.5);
-/*
-		double x1, x2, y1, y2, x_final, y_final;
-		x1 = (corners[2].getX() + corners[1].getX()) / 2;
-		y1 = (corners[2].getY() + corners[1].getY()) / 2;
-		x2 = (corners[0].getX() + corners[3].getX()) / 2;
-		y2 = (corners[0].getY() + corners[3].getY()) / 2;
-		x_final = (x - (x1 * 51 + x2 * 205) / 256) / 2;
-		y_final = (y -  (y1 * 51 + y2 * 205) / 256) / 2;
-*/
-
+		speed.turning(-angle, 0.05);
 	}
 
 	public void  move() {
@@ -145,7 +137,6 @@ public class Car extends Point{
 		angle = startAngle;
 		speed.copy(startSpeed);
 		wheelAngle = 0;
-
 	}
 
 	public void updatePoints(){
