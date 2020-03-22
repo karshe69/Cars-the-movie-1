@@ -107,12 +107,12 @@ public class Board extends JPanel
     private void checkpresses() {
     	if(presses[4]) //S: activates breaks
 			breaking(car, BREAKFRIC);
-    	else
-            if (presses[0]){ //W: activates gas, can break and gas at the same time so breaking takes priority
+    	else{
+            if (presses[0]) //W: activates gas, can break and gas at the same time so breaking takes priority
                 car.accel(ACCEL);
             if(presses[1]) //W: activates gas, can break and gas at the same time so breaking takes priority
-                car.accel(-ACCEL);
-        }
+                car.accel(-ACCEL / 2);
+            }
 		if(presses[2]) {
     		//D: turns the car right
 	    	car.turn(TURNINGRATE);
