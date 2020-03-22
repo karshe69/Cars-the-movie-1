@@ -82,8 +82,8 @@ public class Board extends JPanel implements ActionListener { // the board of th
 
     	drawTrack(g2); // draws the race track
 
-    	String str = ""; //translates the ticks to an actual timer in format of min:sec.milisec
-    	str += (time / FPS / 60) + ":" + (time / FPS % 60) + "." + (time % FPS * 50 / 3);
+    	String str = ""; //translates the ticks to an actual timer in format of hours:min:sec.milisec
+    	str += String.format("%03d", (time / FPS / 360)) + ":" + String.format("%02d", (time / FPS / 60 % 60)) + ":" + String.format("%02d", (time / FPS % 60)) + "." + String.format("%03d", (time % FPS * 50 / 3));
 
         g2.setColor(timerColor); // sets color for the timer
         g2.setFont(new Font("Courier", Font.BOLD,75)); // sets font and size of the timer
