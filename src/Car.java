@@ -79,6 +79,9 @@ public class Car extends Point{
 	}
 
 	public void turning(){
+
+
+
 		double rate = 0.3;
 		double turnn = wheelAngle * rate;
 		angle += turnn;

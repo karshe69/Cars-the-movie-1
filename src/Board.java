@@ -70,10 +70,10 @@ public class Board extends JPanel
 
     private void drawStuff(Graphics g) {
     	Graphics2D g2 = (Graphics2D) g;
-    	g2.setColor(new Color(0, 0, 0));
+    	g2.setColor(new Color(255, 255, 255));
     	g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 
-    	drawTrack(g);
+    	drawTrack(g2);
     	checkpresses(); // does what ever needs to be done if any keys are pressed.
     	breaking(car); // adds frictions
         car.move(); // moves the car to its new position
