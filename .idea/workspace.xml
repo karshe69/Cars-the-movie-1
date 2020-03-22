@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="aec33a3a-1446-4b7e-a97d-bdf99983e8bf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/carrs/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/carrs/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584903320211</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="its timer time">
+      <created>1584906192186</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1584906192186</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -236,7 +242,8 @@
     <MESSAGE value="upgraded hitbox" />
     <MESSAGE value="fixed going backwards" />
     <MESSAGE value="cool map made by vel" />
-    <option name="LAST_COMMIT_MESSAGE" value="cool map made by vel" />
+    <MESSAGE value="its timer time" />
+    <option name="LAST_COMMIT_MESSAGE" value="its timer time" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1245" y="207" key="#com.intellij.ide.util.MemberChooser" timestamp="1584816954395">
@@ -251,10 +258,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1170" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1584815937350" />
-    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584903317399">
+    <state x="958" y="33" key="CommitChangelistDialog2" timestamp="1584906190760">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584903317399" />
+    <state x="958" y="33" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1584906190760" />
     <state width="1877" height="277" key="GridCell.Tab.0.bottom" timestamp="1584906131860">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -287,10 +294,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1877" height="346" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1584893617353" />
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584887734245">
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2" timestamp="1584906194555">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584887734245" />
+    <state x="552" y="252" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1584906194555" />
     <state x="1136" y="343" key="com.intellij.ide.util.TipDialog" timestamp="1584902056719">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
