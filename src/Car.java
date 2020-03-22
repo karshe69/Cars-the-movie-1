@@ -1,6 +1,7 @@
 import java.awt.Graphics2D;
 
 public class Car extends Point{
+	private Point[] edges = new Point[6];
 	private Point[] corners = new Point[4];
 	private Point[] points = new Point[56];
 	private Line_point[] spoiler1 = new Line_point[3];
@@ -69,6 +70,14 @@ public class Car extends Point{
 				wheels[i][j] = new Line_point(points[40 + 4 * i + j], points[41 + 4 * i + j]);
 			wheels[i][3] = new Line_point(points[40 + 4 * i], points[43 + 4 * i]);
 		}
+
+		edges[0] = points[1];
+		edges[1] = points[2];
+		edges[2] = points[35];
+		edges[3] = points[36];
+		edges[4] = points[50];
+		edges[5] = points[54];
+
 		updatePoints();
 	}
 
@@ -79,7 +88,6 @@ public class Car extends Point{
 	}
 
 	public void turning(){
-
 
 
 		double rate = 0.3;
@@ -386,7 +394,6 @@ public class Car extends Point{
 		points[23].update((tcorners[1].getX() * 9 + tcorners[3].getX() * 7) / 16, (tcorners[1].getY() * 9 + tcorners[3].getY() * 7) / 16);
 		points[24].update((tcorners[1].getX() * 7 + tcorners[3].getX() * 9) / 16, (tcorners[1].getY() * 7 + tcorners[3].getY() * 9) / 16);
 
-
 	}
 	
 	public void vaccel(Vector vs) {
@@ -405,8 +412,8 @@ public class Car extends Point{
 		return speed;
 	}
 
-	public synchronized Point[] getCorners() {
-		final Point[] pnts = corners;
+	public synchronized Point[] getEdges() {
+		final Point[] pnts = edges;
 		return pnts;
 	}
 }

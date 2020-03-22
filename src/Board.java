@@ -83,7 +83,7 @@ public class Board extends JPanel
 
     private void collisionCheck(){
         int x, y;
-        for (Point pnt:car.getCorners()
+        for (Point pnt:car.getEdges()
              ) {
             x = (int)Math.abs(pnt.getX());
             y = (int)Math.abs(pnt.getY());
